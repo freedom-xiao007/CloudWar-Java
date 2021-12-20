@@ -22,7 +22,7 @@ public class ArrowTest {
     }
 
     @Test
-    public void shootPostiveLocTest() {
+    public void shootPositiveLocTest() {
         final GameUnit target = new Biology(150, 150, 10, 10);
         final Arrow arrow = new Arrow(100, 100, target);
         final CenterPos arrowCenter = new CenterPos(arrow.getLocation());
