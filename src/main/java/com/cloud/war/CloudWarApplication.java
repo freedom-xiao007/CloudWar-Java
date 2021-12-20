@@ -1,4 +1,4 @@
-package com.cloud.war.cloudwar;
+package com.cloud.war;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -35,4 +35,8 @@ public class Location {
         }
         return !(this.getBottom() < loc.getTop());
     }
+
+    public String toString() {
+        return String.format("top: %d, left: %d, right: %d, bottom: %d", top, left, right, bottom);
+    }
 }
