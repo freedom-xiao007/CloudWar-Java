@@ -15,12 +15,16 @@ public class Location {
     private int top;
     private int right;
     private int bottom;
+    private int width;
+    private int height;
 
     public Location(final int x, final int y, final int width, final int height) {
         this.left = x;
         this.top = y;
         this.right = x + width;
         this.bottom = y + height;
+        this.width = width;
+        this.height = height;
     }
 
     public boolean isCollision(final Location loc) {
@@ -37,6 +41,6 @@ public class Location {
     }
 
     public String toString() {
-        return String.format("top: %d, left: %d, right: %d, bottom: %d", top, left, right, bottom);
+        return String.format("Location{top: %d, left: %d, right: %d, bottom: %d}", top, left, right, bottom);
     }
 }

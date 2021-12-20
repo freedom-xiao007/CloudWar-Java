@@ -1,5 +1,6 @@
 package com.cloud.war.model.build;
 
+import com.cloud.war.model.CenterPos;
 import com.cloud.war.model.GameUnit;
 import com.cloud.war.model.Location;
 import lombok.extern.slf4j.Slf4j;
@@ -40,11 +41,10 @@ public class ArcherTower extends GameUnit {
     }
 
     private Location getAttackRange(final Location location, final int range) {
-        final int centerX = (location.getRight() - location.getLeft()) / 2;
-        final int centerY = (location.getBottom() - location.getTop()) / 2;
-        log.debug("center: x - {} ; y - {}", centerX, centerY);
-        final int attackX = centerX - range;
-        final int attackY = centerY - range;
+        final CenterPos centerPos = new CenterPos(location);
+        log.debug("center: x - {} ; y - {}", centerPos.getX(), centerPos.getY());
+        final int attackX = centerPos.getX() - range;
+        final int attackY = centerPos.getY() - range;
         return new Location(attackX, attackY, range * 2, range * 2);
     }
 

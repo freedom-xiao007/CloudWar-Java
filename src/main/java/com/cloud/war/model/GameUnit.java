@@ -29,7 +29,7 @@ public abstract class GameUnit {
     /**
      * 行动函数
      */
-    protected void update() {};
+    protected void update() {}
 
     /**
      * 攻击函数
