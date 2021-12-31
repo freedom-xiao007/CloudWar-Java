@@ -1,6 +1,7 @@
 package com.cloud.war.scheduler;
 
 import com.cloud.war.controll.UnitContainer;
+import com.cloud.war.model.biology.Biology;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GameScheduler {
 
-    @Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 3000)
     public void GameStart() {
         updateLoc();
         collision();
@@ -27,6 +28,7 @@ public class GameScheduler {
 
     @Scheduled(fixedRate = 10000)
     public void createEnemy() {
-
+        log.debug("rand create game unit");
+        UnitContainer.getInstance().addGameUnits(new Biology(100, 100, 10, 10));
     }
 }
