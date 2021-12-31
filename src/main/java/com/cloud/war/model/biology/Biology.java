@@ -10,4 +10,8 @@ public class Biology extends GameUnit {
     public Biology(int x, int y, int width, int height) {
         super(x, y, width, height);
     }
+
+    @Override
+    public void update() {
+    }
 }

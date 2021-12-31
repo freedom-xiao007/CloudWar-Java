@@ -28,7 +28,7 @@ public class ArcherTower extends GameUnit {
     }
 
     @Override
-    protected int attack(final List<GameUnit> otherGameUnits) {
+    public int attack(final List<GameUnit> otherGameUnits) {
         final Location attackRange = getAttackRange(this.location, range);
         log.debug(attackRange.toString());
         for (GameUnit otherGameUnit : otherGameUnits) {

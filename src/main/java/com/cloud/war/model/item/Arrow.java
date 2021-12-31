@@ -24,7 +24,7 @@ public class Arrow extends GameUnit {
     }
 
     @Override
-    protected void update() {
+    public void update() {
         final CenterPos selfCenter = new CenterPos(location);
         final CenterPos targetCenter = new CenterPos(target.getLocation());
         log.debug("self center: {}, target center: {}", selfCenter, targetCenter);
