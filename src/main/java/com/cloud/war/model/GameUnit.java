@@ -29,13 +29,41 @@ public abstract class GameUnit {
     /**
      * 行动函数
      */
-    protected void update() {}
+    public void update() {}
 
     /**
      * 攻击函数
      * @param otherGameUnits other game units
      */
-    protected int attack(final List<GameUnit> otherGameUnits) {
+    public int attack(final List<GameUnit> otherGameUnits) {
         return damage;
+    }
+
+    protected void moveUp(final int distance) {
+        final int top = this.location.getTop();
+        final int bottom = this.location.getBottom();
+        this.location.setTop(top - distance);
+        this.location.setBottom(bottom - distance);
+    }
+
+    protected void moveDown(final int distance) {
+        final int top = this.location.getTop();
+        final int bottom = this.location.getBottom();
+        this.location.setTop(top + distance);
+        this.location.setBottom(bottom + distance);
+    }
+
+    protected void moveLeft(final int distance) {
+        final int left = this.location.getLeft();
+        final int right = this.location.getRight();
+        this.location.setLeft(left - distance);
+        this.location.setRight(right - distance);
+    }
+
+    protected void moveRight(final int distance) {
+        final int left = this.location.getLeft();
+        final int right = this.location.getRight();
+        this.location.setLeft(left + distance);
+        this.location.setRight(right + distance);
     }
 }
